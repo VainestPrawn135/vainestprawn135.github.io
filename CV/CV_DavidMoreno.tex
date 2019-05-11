@@ -1,207 +1,94 @@
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-% LaTeX Template: Curriculum Vitae
-%
-% Source: http://www.howtotex.com/
-% Feel free to distribute this template, but please keep the
-% referal to HowToTeX.com.
-% Date: July 2011
-%Version for spanish users, by dgarhdez
-% 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-% How to use writeLaTeX: 
-%
-% You edit the source code here on the left, and the preview on the
-% right shows you the result within a few seconds.
-%
-% Bookmark this page and share the URL with your co-authors. They can
-% edit at the same time!
-%
-% You can upload figures, bibliographies, custom classes and
-% styles using the files menu.
-%
-% If you're new to LaTeX, the wikibook is a great place to start:
-% http://en.wikibooks.org/wiki/LaTeX
-%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\documentclass[paper=a4,fontsize=11pt]{scrartcl} % KOMA-article class
+% Curriculum de Ejemplo
 
-\usepackage[spanish]{babel}
-\usepackage[utf8x]{inputenc}
-\usepackage[protrusion=true,expansion=true]{microtype}
-\usepackage{amsmath,amsfonts,amsthm}     % Math packages
-\usepackage{graphicx}                    % Enable pdflatex
-\usepackage[svgnames]{xcolor}            % Colors by their 'svgnames'
-\usepackage{geometry}
-	\textheight=675px                    % Saving trees ;-)
-\usepackage{url}
+\documentclass[11pt, a4paper]{moderncv}
 
-\frenchspacing              % Better looking spacings after periods
-\pagestyle{empty}           % No pagenumbers/headers/footers
+%Estilo del paquete moderncv, otra opcion es classic
+\moderncvstyle{casual}
 
-%%% Custom sectioning (sectsty package)
-%%% ------------------------------------------------------------
-\usepackage{sectsty}
+%Codificacion
+\usepackage[utf8]{inputenc}
 
-\sectionfont{%			            % Change font of \section command
-	\usefont{OT1}{phv}{b}{n}%		% bch-b-n: CharterBT-Bold font
-	\sectionrule{0pt}{0pt}{-4pt}{1pt}}
+%Ajuste de margenes de pagina
+\usepackage[scale=0.8]{geometry}
+%\setlength{\hintscolumnwidth}{3cm}
+%\AtBeginDocument{\setlength{\maketitlenamewidth}{6cm}} Solo para el tema clasico
 
-%%% Macros
-%%% ------------------------------------------------------------
-\newlength{\spacebox}
-\settowidth{\spacebox}{888888888}			% Box to align text
-\newcommand{\sepspace}{\vspace*{0.1mm}}		% Vertical space macro
+\AtBeginDocument{\recomputelengths}
 
-\newcommand{\MyName}[1]{ % Name
-		\Huge \usefont{OT1}{phv}{b}{n} \hfill #1
-		\par \normalsize \normalfont}
-		
-\newcommand{\MySlogan}[1]{ % Slogan (optional)
-		\large \usefont{OT1}{phv}{m}{n}\hfill \textit{#1}
-		\par \normalsize \normalfont}
+%Datos personales
+\firstname{David}
+\familyname{Moreno Martínez}
+\title{Ingeniero en Computación}
+%\datebirth
+\address{Asturias #254 Int. C-501, CP. 03400, Benito Juárez, CDMX}
+\phone{55 4801 0062}
+\email{dmorenom1403@alumno.ipn.mx}
+\extrainfo{https://www.linkedin.com/in/dave-moreno-b552b6180/}
+\photo[64pt]{dave.jpg}
 
-\newcommand{\NewPart}[1]{\section*{\uppercase{#1}}}
 
-\newcommand{\PersonalEntry}[2]{
-		\noindent\hangindent=2em\hangafter=0 % Indentation
-		\parbox{\spacebox}{        % Box to align text
-		\textit{#1}}		       % Entry name (birth, address, etc.)
-		\hspace{1.5em} #2 \par}    % Entry value
 
-\newcommand{\SkillsEntry}[2]{      % Same as \PersonalEntry
-		\noindent\hangindent=2em\hangafter=0 % Indentation
-		\parbox{\spacebox}{        % Box to align text
-		\textit{#1}}			   % Entry name (birth, address, etc.)
-		\hspace{1.25em} #2 \par}    % Entry value	
-		
-\newcommand{\EducationEntry}[4]{
-		\noindent \textbf{#1} \hfill      % Study
-		\colorbox{White}{%
-			\parbox{5cm}{%
-			\hfill\color{Black}#2}} \par  % Duration
-		\noindent \textit{#3} \par        % School
-		\noindent\hangindent=2em\hangafter=0 \small #4 % Description
-		\normalsize \par}
+%---------------------
+% Contenido
+%---------------------
 
-\newcommand{\WorkEntry}[4]{				  % Same as \EducationEntry
-		\noindent \textbf{#1} \hfill      % Jobname
-		\colorbox{White}{%
-			\parbox{5cm}{%
-			\hfill\color{Black}#2}} \par  % Duration
-		\noindent \textit{#3} \par              % Company
-		\noindent\hangindent=2em\hangafter=0 \small #4 % Description
-		\normalsize \par}
-
-%%% Begin Document
-%%% ------------------------------------------------------------
 \begin{document}
-% you can upload a photo and include it here...
-%\begin{wrapfigure}{r}{0.5\textwidth}
-%	\vspace*{-2em}
-%		\includegraphics[width=0.15\textwidth]{dave.jpg}
-%\end{wrapfigure}
+\maketitle
 
-\MyName{David Moreno Martínez}
-\MySlogan{Ingeniero en Computación}
+\section{Datos Personales}
 
-\sepspace
+\cvlistitem{\textbf{Nombre:} David}
+\cvlistitem{\textbf{Apellidos:} Moreno Martínez}
+\cvlistitem{\textbf{Fecha de Nacimiento:} 25 agosto 1995}
+\cvlistitem{\textbf{Dirección:} Asturias #254 Int. C-501, CP. 03400, Benito Juárez, CDMX}
+\cvlistitem{\textbf{Teléfono:} 55 4801 0062}
+\cvlistitem{\textbf{Correo:} dmorenom1403@alumno.ipn.mx}
+\cvlistitem{\textbf{LinkedIn:} Dave Moreno}
 
-%%% Personal details
-%%% ------------------------------------------------------------
-\NewPart{Datos personales}{}
 
-\PersonalEntry{Nacimiento}{25 de agosto de 1995}
-\PersonalEntry{Teléfono}{(55) 57-42-02-12}
-\PersonalEntry{Celular}{(+52) 044-55-4801-0062}
-\PersonalEntry{E-Mail}{\url{dmorenom1403@alumno.ipn.mx}}
+\section{Formación académica}
+%En los cventry debe haber 6 llaves, aunque no tengamos mas que introducir
+%y esten vacias
+\cventry{2011--2014}{Técnico en Dibujo Asistido por Computadora} {Cecyt Núm. 2 "Miguel Bernard"}{Ciudad de México}{}{}
+\cventry{2014--2018}{Ingeniería en Computación}{ESIME Unidad "Culhuacán"}{Ciudad de México}{\textit{\textbf{Título en trámite}}}{}
 
-%%% Education
-%%% ------------------------------------------------------------
-\NewPart{Educación}{}
+\section{Cursos y seminarios}
 
-\EducationEntry{Ingeniería en Computación (Título en trámite)}{2014-2018}{Escuela Superior de Ingeniería Mecánica y Eléctrica Unidad Culhuacán}{
-\begin{itemize}
-\item{Proyecto de fin de carrera: \emph{Modelado y Simulación por HID de un brazo robótico en Realidad Aumentada}}
-\end{itemize}
-}
+\cventry{Agosto 2018}{Desarrollo Web Full-Stack}{Kodemia}{CDMX}{}{}
 
-\NewPart{Cursos Extracurriculares}{}
+%\section{Experiencia Profesional}
+%\section{Experiencia becada}
+%\section{Experiencia Freelance}
+%\section{Docencia}
 
-\EducationEntry{Programación en Java}{2016}{En Línea}{}
+%para ver el funcionamiento de subsecciones
+%\subsection{Vocacional}
 
-\sepspace
+%\cventry{Abril 2008 - Junio 2008}{Becario}{Empresa X}{Desarrollo en la plataforma Eclipse}{Sevilla}{}
+%\cventry{Junio 2008 - Junio 2009}{Analista}{Empresa Y}{Sevilla}{}{}
 
-\EducationEntry{Programación en Python}{2017}{En Línea}{}
+\section{Idiomas}
+%cvlanguage necesitan 3 llaves, cuestiones de formateo del curriculum
+\cvlanguage{Español}{Nativo}{}
+\cvlanguage{Inglés}{Nivel Avanzado}{Cursando Nivel 14 en Interlingua}
+\closesection{}
+%Salto de pagina
+%\pagebreak{}
 
-\sepspace
+\section{Conocimientos técnicos}
 
-\EducationEntry{Ingeniería de Software}{2017}{IPN}{}
+%Los comandos cvcomputer necesitan 4 llaves
+\cvcomputer{S.O.}{GNU/Linux, Windows}
+{Servidores}{Apache, Tomcat}
+\cvcomputer{Programación}{\textsc{Java},\textsc{Python} , C/C++ Básico, PHP Intermedio, Javascript Básico (jQuery, Node.js, NPM)}{}{}
+\cvcomputer{Otros}{LaTex, \textsc{Git}, \textsc{GitHub}, Docker, VirtualMachines}{}{}
+\cvcomputer{Microsoft Office}{Word, Excel, PowerPoint, Visio, Project, Publisher}{}{}
+\cvcomputer{Bases de Datos}{MySQL, PHPMyAdmin, Oracle, MongoDB}{}{}
 
-\sepspace
+%\section{Otros datos de interés}
+%Los cvitem necesitan dos llaves
+%\cvitem{Software Libre}{Asociación Sugus GNU/Linux Software Libre, Universidad de Sevilla}
 
-\EducationEntry{Bases de Datos en Oracle}{2017}{IPN}{}
-
-\sepspace
-
-\EducationEntry{PHP Orientado a Objetos}{2018}{En Línea}{}
-
-\sepspace
-
-\EducationEntry{Bases de Datos en MySQL}{2018}{IPN}{}
-
-\sepspace
-
-\EducationEntry{Curso de Java EE}{2018}{En Línea}{}
-
-\sepspace
-
-\EducationEntry{Desarrollo Web Full-Stack}{2018}{Kodemia}{}
-
-%%% Work experience
-%%% ------------------------------------------------------------
-\NewPart{Experiencia}
-
-\WorkEntry{Soporte Técnico}{2018 - Actualidad}{Independiente}{
-\begin{itemize}
-\item{Configuración de computadoras, impresoras, scaner's, modems.}
-\end{itemize}
-}
-
-%%% Skills
-%%% ------------------------------------------------------------
-\NewPart{Conocimientos y Habilidades (Skills)}
-
-\SkillsEntry{Aptitudes}{}
-\SkillsEntry{}{Autodidacta}
-\SkillsEntry{}{Cacapidad de Organización}
-\SkillsEntry{}{Buen Negociador}
-\SkillsEntry{}{Trabajo en equipo}
-\SkillsEntry{}{Flexibilidad y adaptación a cambios}
-\SkillsEntry{}{Análisis y resolución de problemas}
-
-\SkillsEntry{Idiomas}{}
-\SkillsEntry{}{Español (Nativo)}
-\SkillsEntry{}{Inglés (Avanzado)(80\%)}
-
-\SkillsEntry{Técnicas/os}{}
-\SkillsEntry{}{Microsoft Office, Visio, Project}
-\SkillsEntry{}{Corel Draw, AutoCAD, SolidWorks, Unity, Blender}
-\SkillsEntry{}{Manejo de repositorios con Git y GitHub}
-\SkillsEntry{}{Conocimiento sobre contenedores Docker}
-\SkillsEntry{}{Conocimiento y manejo en Virtual Machines}
-\SkillsEntry{}{Manejo de documentación y diagramas UML}
-\SkillsEntry{}{Conocimiento en varios IDE's y Editores de código}
-\SkillsEntry{}{Configuración de Computadoras Windows/Linux}
-\SkillsEntry{}{Configuración de impresoras/scaner's}
-\SkillsEntry{}{Conocimiento de redes de computadoras}
-\SkillsEntry{}{Assembler 8086, C/C++, Java, Python, C\#}
-\SkillsEntry{}{PHP, Javascript, MySQL, HTML5, XML, CSS3, Ruby}
-\SkillsEntry{}{Django, Flask, React, Ionic, Node.js}
-\SkillsEntry{}{Bootstrap, jQuery, Laravel}
-%\SkillsEntry{}{}
-
-%%% References
-%%% ------------------------------------------------------------
-%\NewPart{References}{}
-%Available upon request
+%\section{Intereses}
+%\section{Más información}
 \end{document}
